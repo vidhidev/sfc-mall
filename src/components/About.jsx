@@ -1,9 +1,11 @@
 import director1 from "../assets/sukumar-chougule.jpg";
 import director2 from "../assets/walchand-chougle.jpg";
 
+import styles from "./About.module.css";
+
 export default function About() {
   return (
-    <section id="aboutus" className="section light pop-up-scroll">
+    <section id="aboutus" className={`${styles.section} pop-up-scroll`}>
       <h2>About SFC Lifestyle</h2>
 
       <p>
@@ -11,8 +13,8 @@ export default function About() {
         With a unique ambience and modern facilities, it is the pride of the city.
       </p>
 
-      <div className="vision-mission">
-        <div className="vision-box pop-up-scroll">
+      <div className={styles.visionMission}>
+        <div className={`${styles.visionBox} pop-up-scroll`}>
           <h4>Vision</h4>
           <p>
             To be the most respected leader in the construction industry by
@@ -20,7 +22,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="vision-box pop-up-scroll">
+        <div className={`${styles.visionBox} pop-up-scroll`}>
           <h4>Mission</h4>
           <p>
             To build long-term relationships through integrity and performance.
@@ -28,14 +30,14 @@ export default function About() {
         </div>
       </div>
 
-      <div className="directors">
-        <div className="director-card pop-up-scroll">
+      <div className={styles.directors}>
+        <div className={`${styles.directorCard} pop-up-scroll`}>
           <img src={director1} />
           <h4>Mr. Sukumar F. Chougule</h4>
           <p><strong>Chairman</strong></p>
         </div>
 
-        <div className="director-card pop-up-scroll">
+        <div className={`${styles.directorCard} pop-up-scroll`}>
           <img src={director2} />
           <h4>Mr. Walchand S. Chougule</h4>
           <p><strong>Director</strong></p>

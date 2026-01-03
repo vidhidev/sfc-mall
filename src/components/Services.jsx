@@ -18,19 +18,20 @@ const servicesData = [
   { icon: "fas fa-film", title: "Entertainment", desc: "Enjoy movies, games, and live events for all ages." }
 ];
 
+import styles from "./Services.module.css";
+
 export default function Services() {
   return (
-    <section id="services" className="section light pop-up-scroll">
-      <div className="container">
-        <h2 className="pop-up-scroll">Our Services</h2>
+    <section id="services" className={`${styles.section} pop-up-scroll`}>
+      <div className={styles.container}>        <h2 className="pop-up-scroll">Our Services</h2>
         <p className="pop-up-scroll" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 40px' }}>
           At SFC Mega Mall, we go beyond shopping to offer a complete experience with a range 
           of integrated services designed for your convenience and comfort.
         </p>
         
-        <div className="services-grid">
+        <div className={styles.servicesGrid}>
           {servicesData.map((service, index) => (
-            <div key={index} className="service-card pop-up-scroll">
+            <div key={index} className={`${styles.serviceCard} pop-up-scroll`}>
               <i className={service.icon}></i>
               <h3>{service.title}</h3>
               <p>{service.desc}</p>

@@ -1,0 +1,19 @@
+.section {
+  padding: 80px 20px;
+}
+
+.mapContainer {
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.socialIcons a {
+  font-size: 1.4rem;
+  color: var(--accent-color);
+}

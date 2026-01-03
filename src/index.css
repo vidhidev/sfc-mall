@@ -1,37 +1,46 @@
 /* =========================================================
-   UPDATED ROOT VARIABLES (High Contrast & Premium)
+   UPDATED ROOT VARIABLES (Clean & Consistent)
 ========================================================= */
 :root {
-  /* Clean & Modern Mall Palette */
---bg-main: #F6F7F9;        /* Cool Off-White (very clean, airy) */
---surface: #FFFFFF;        /* Pure White (cards, sections) */
+  /* Core Palette */
+  --bg-main: #F6F7F9;
+  --surface: #FFFFFF;
+  --text-main: #1C1F26;
+  --text-muted: #6B7280;
+  --accent: #2563EB;
+  --accent-soft: #E8F0FF;
+  --secondary-accent: #22C55E;
 
---text-main: #1C1F26;      /* Rich Charcoal (strong readability) */
---text-muted: #6B7280;     /* Soft Cool Grey (descriptions, labels) */
-
---accent: #2563EB;         /* Modern Blue (trust, brands, navigation) */
---accent-soft: #E8F0FF;    /* Light Blue Tint (hover, tags, highlights) */
-
---secondary-accent: #22C55E; /* Fresh Green (offers, facilities, open vibe) */
-
-  
   /* Typography */
   --font-display: 'Playfair Display', serif;
   --font-body: 'Montserrat', sans-serif;
-  
-  --section-padding: 120px;
-}
+  --nav-font: 'Montserrat', sans-serif;
+  --heading-font: 'Playfair Display', serif;
+
+  /* Layout */
+  --section-padding: 80px;
+  --topbar-height: 36px;
+  --header-height: 74px;
+
+  /* Semantic aliases for legacy vars used elsewhere */
+  --default-color: var(--text-main);
+  --heading-color: var(--text-main);
+  --background-color: var(--bg-main);
+  --accent-color: var(--accent);
+  --surface-color: var(--surface);
+  --contrast-color: #FFFFFF;
+  --muted-text: var(--text-muted);
+} 
 
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
   font-family: var(--font-body);
-  line-height: 1.8; /* High readability */
+  line-height: 1.6;
   margin: 0;
-}
-
-.section {
-  padding: var(--section-padding) 10%; /* Massive whitespace */
+  padding-top: calc(var(--topbar-height) + var(--header-height));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3 {
@@ -41,578 +50,30 @@ h1, h2, h3 {
   color: var(--text-main);
 }
 
-/* Updated Button: Modern & Interactive */
-.btn-primary {
-  background-color: var(--text-main);
-  color: #FFFFFF;
-  padding: 14px 30px;
-  border-radius: 2px; /* Sharp edges for luxury */
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
+/* Primary button styles moved to globals.css */
 
-.btn-primary:hover {
-  background-color: var(--accent);
-  transform: translateY(-2px); /* Micro-interaction */
-}
+/* Section spacing moved to component modules */
 
-/* Premium Section Spacing - No Clutter */
-.section {
-  padding: 140px 10%; /* Wide gutters to avoid overcrowding */
-}
+/* Sticky badge removed / not used */
 
-.section h2 {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 60px;
-  letter-spacing: -1px;
-}
+/* TOP BAR moved to TopBar.module.css */
 
+/* Header/nav moved to Header.module.css */ 
+/* Buttons moved to globals.css */
 
-/* Sticky Location/Hours Badge */
-.sticky-info {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: var(--default-color);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 50px;
-  z-index: 2000;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  font-family: var(--nav-font);
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
+/* Hero styles moved to Hero.module.css */
 
-/* =========================================================
-   TOP BAR
-========================================================= */
-.top-bar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 35px;
-  background: #ffffff;
-  z-index: 1002;
-  font-family: var(--nav-font);
-  font-size: 0.9rem;
-}
+/* Generic section styles are now scoped in component modules */
 
-.top-bar-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
+/* Store grid styles moved to Stores.module.css */
 
-.top-bar-content span {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+/* Services styles moved to Services.module.css */
+/* About styles moved to About.module.css */
 
-/* =========================================================
-   HEADER / NAV
-========================================================= */
-/* Update these sections in index.css */
-header {
-  position: fixed;
-  top: 35px; /* Sits below the TopBar */
-  left: 0;
-  width: 100%;
-  height: 75px;
-  background: #121212; /* Use a solid dark charcoal for high contrast */
-  z-index: 1001;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5%; /* Give it more horizontal padding for a professional look */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
+/* Contact styles moved to Contact.module.css */
 
-.logo img {
-  height: 50px; /* Slightly larger for visibility */
-  width: auto;
-}
+/* Pop-up scroll moved to globals.css */
 
-nav {
-  display: flex;
-  gap: 25px; /* More spacing between links for better readability */
-}
 
-nav a {
-  color: #ffffff !important; /* Force white text to ensure it's visible on dark bg */
-  font-family: var(--nav-font);
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-}
-/* =========================================================
-   BUTTONS
-========================================================= */
-.btn {
-  padding: 10px 24px;
-  border-radius: 30px;
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  border: 2px solid var(--accent-color);
-  font-family: var(--nav-font);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
+/* Responsive rules moved to respective modules (Header, Hero, About, Services) */
 
-.btn:hover {
-  background: var(--surface-color);
-  color: var(--accent-color);
-  transform: translateY(-2px);
-}
-
-/* =========================================================
-   HERO SECTION
-========================================================= */
-.hero {
-  height: calc(100vh - var(--header-height));
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.hero-content {
-  text-align: center;
-  color: var(--heading-color);
-}
-
-.hero-content h1 {
-  font-family: var(--heading-font);
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero-content .btns {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.play-button {
-  width: 70px;
-  height: 70px;
-  margin: 30px auto 0;
-  border-radius: 50%;
-  background: var(--accent-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: white;
-  transition: transform 0.25s ease;
-}
-
-.play-button:hover {
-  transform: scale(1.1);
-}
-
-/* =========================================================
-   SECTIONS (GENERIC)
-========================================================= */
-.section {
-  padding: 80px 20px;
-}
-
-.section.light {
-  background: #f1f3f5;
-}
-
-.section.dark {
-  background: var(--background-color);
-}
-
-.section h2 {
-  text-align: center;
-  font-family: var(--heading-font);
-  font-size: 2.2rem;
-  margin-bottom: 30px;
-}
-
-/* =========================================================
-   STORE GRID
-========================================================= */
-/* Bento Grid Layout */
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 220px;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Sizing logic for Bento boxes */
-.store-bento-card.large {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.store-bento-card.wide {
-  grid-column: span 2;
-  grid-row: span 1;
-}
-
-.store-bento-card.standard {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
-/* Professional Card Styling */
-.store-bento-card {
-  position: relative;
-  border-radius: 16px;
-  background: #fff;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.store-bento-card:hover {
-  transform: scale(1.02);
-  z-index: 10;
-}
-
-/* Image styling */
-.store-image-wrapper {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.store-img {
-  max-height: 80%;
-  width: auto;
-  object-fit: contain;
-  transition: transform 0.4s ease;
-}
-
-.store-bento-card:hover .store-img {
-  transform: scale(1.1);
-}
-
-/* Luxury Hover Overlay */
-.store-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 60%);
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.store-bento-card:hover .store-overlay {
-  opacity: 1;
-}
-
-.category-tag {
-  background: var(--accent-color);
-  font-size: 0.7rem;
-  padding: 4px 10px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.store-desc {
-  font-size: 0.8rem;
-  margin-top: 8px;
-  line-height: 1.4;
-  opacity: 0.9;
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .bento-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 600px) {
-  .bento-grid { grid-template-columns: 1fr; grid-auto-rows: 250px; }
-  .store-bento-card.large, .store-bento-card.wide { grid-column: span 1; }
-}
-
-/* =========================================================
-   SERVICES
-
-========================================================= */
-
-
-/* Section Container - Using the 120px padding for "breathing room" */
-#services {
-  padding: 120px 20px;
-  background-color: var(--background-color); /* Ivory base */
-  color: var(--default-color); /* Charcoal text */
-}
-
-/* Intro Text Styling - High Contrast & Line Height */
-#services .container > p {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 60px;
-  font-size: 1.1rem;
-  line-height: 1.8; /* Effortless readability */
-  color: var(--muted-text);
-}
-
-/* The Grid - Clean and Spaced */
-.services-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-/* Service Card - Luxury Aesthetic */
-.service-card {
-  background: var(--surface-color);
-  padding: 40px 30px;
-  border-radius: 4px; /* Sharp, professional edges */
-  text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); /* Professional transition */
-  position: relative;
-  overflow: hidden;
-}
-
-/* Micro-Interaction: Hover Effect */
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  border-color: var(--accent-color);
-}
-
-/* Icon Styling - Brand Identity */
-.service-card i {
-  font-size: 2.2rem;
-  color: var(--accent-color);
-  margin-bottom: 25px;
-  display: inline-block;
-  transition: transform 0.5s ease;
-}
-
-.service-card:hover i {
-  transform: scale(1.1) rotate(5deg); /* Subtle icon animation */
-}
-
-/* Typography inside Cards */
-.service-card h3 {
-  font-family: var(--nav-font);
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: var(--heading-color);
-  letter-spacing: 0.5px;
-}
-
-.service-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--muted-text);
-  margin: 0;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  #services {
-    padding: 80px 20px;
-  }
-  
-  .services-grid {
-    grid-template-columns: 1fr; /* Single column for mobile clarity */
-    gap: 20px;
-  }
-}
-/* =========================================================
-   ABOUT / DIRECTORS
-========================================================= */
-.about-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.vision-mission {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.vision-box {
-  max-width: 420px;
-  background: var(--surface-color);
-  padding: 26px;
-  border-radius: 12px;
-  border: 1.5px solid var(--accent-color);
-}
-
-.directors {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.director-card {
-  width: 280px;
-  background: var(--surface-color);
-  padding: 22px;
-  border-radius: 12px;
-  text-align: center;
-  border: 1.5px solid var(--accent-color);
-  transition: transform 0.3s ease;
-}
-
-.director-card:hover {
-  transform: translateY(-8px);
-}
-
-/* =========================================================
-   CONTACT
-========================================================= */
-.map-container {
-  max-width: 1200px;
-  margin: 40px auto;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-}
-
-.social-icons a {
-  font-size: 1.4rem;
-  color: var(--accent-color);
-}
-
-/* =========================================================
-   SCROLL ANIMATION
-========================================================= */
-/* Updated Pop-up Animation */
-.pop-up-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: opacity, transform;
-}
-
-.pop-up-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Add a dark overlay to Hero video for readability */
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* 40% dark overlay */
-  z-index: 0;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  color: #ffffff; /* Make text white for contrast */
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .vision-mission {
-    flex-direction: column;
-  }
-}
-
-
-.nav-toggle {
-  display: none;
-  font-size: 1.8rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .nav-toggle {
-    display: block;
-    position: absolute;
-    right: 16px;
-    top: 20px;
-  }
-
-  nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.95);
-    position: absolute;
-    top: 75px;
-    left: 0;
-    padding: 10px 0;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  nav a {
-    padding: 12px;
-    text-align: center;
-  }
-}

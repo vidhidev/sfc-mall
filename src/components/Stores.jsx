@@ -27,25 +27,27 @@ const storeData = [
   { id: 12, name: "RELIANCE FOOTPRINT", img: footprint, cat: "Footwear", loc: "Upper Ground", size: "standard" },
 ];
 
+import styles from "./Stores.module.css";
+
 export default function Stores() {
   return (
-    <section id="stores" className="section light pop-up-scroll">
-      <div className="container">
+    <section id="stores" className={`${styles.section} ${'pop-up-scroll'}`}>
+      <div className={styles.container}>
         <h2 className="pop-up-scroll">Our Premium Brands</h2>
-        <div className="bento-grid">
+        <div className={styles.bentoGrid}>
           {storeData.map((store) => (
-            <div key={store.id} className={`store-bento-card ${store.size} pop-up-scroll`}>
-              <div className="store-image-wrapper">
-                <img src={store.img} alt={store.name} className="store-img" />
+            <div key={store.id} className={`${styles.storeBentoCard} ${styles[store.size]} pop-up-scroll`}>
+              <div className={styles.storeImageWrapper}>
+                <img src={store.img} alt={store.name} className={styles.storeImg} />
               </div>
-              <div className="store-overlay">
+              <div className={styles.storeOverlay}>
                 <div className="store-info-top">
-                  <span className="category-tag">{store.cat}</span>
+                  <span className={styles.categoryTag}>{store.cat}</span>
                   <h3>{store.name}</h3>
                 </div>
                 <div className="store-details">
                   <p><i className="fas fa-map-marker-alt"></i> {store.loc}</p>
-                  {store.desc && <p className="store-desc">{store.desc}</p>}
+                  {store.desc && <p className={styles.storeDesc}>{store.desc}</p>}
                 </div>
               </div>
             </div>

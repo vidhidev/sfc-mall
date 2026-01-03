@@ -9,6 +9,7 @@ import Stores from "./components/Stores";
 import Services from "./components/Services";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import BrandCarousel from "./components/BrandCarousel";
 
 export default function App() {
   // This line was causing the crash because the hook wasn't correctly linked
@@ -19,6 +20,7 @@ export default function App() {
       <TopBar />
       <Header />
       <Hero />
+      <BrandCarousel />
       <Stores />
       <Services />
       <About />

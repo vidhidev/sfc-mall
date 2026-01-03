@@ -1,26 +1,28 @@
-import heroVideo from "../assets/Untitled video - Made with Clipchamp.mp4";
+import React from "react";
+import heroImage from "../assets/hero.jpg";
+import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section className="hero pop-up-scroll">
-      <video id="bgVideo" muted loop>
-        <source src={heroVideo} type="video/mp4" />
-      </video>
+    <section
+      className={`${styles.hero} ${styles.heroImage}`}
+      style={{
+        backgroundImage: `linear-gradient(
+          rgba(0,0,0,0.45),
+          rgba(0,0,0,0.45)
+        ), url(${heroImage})`,
+      }}
+    >
+      <div className={styles.heroContent}>
+        <h1>Sangli’s Ultimate Shopping & Entertainment Destination</h1>
 
-      <div className="hero-content pop-up-scroll">
-        <h1>
-          Welcome to <span style={{ color: "#650000" }}>S F C</span>
-        </h1>
+        <p>
+          Shopping · Food · Movies · Events
+        </p>
 
-        <div className="btns">
-          <a href="#stores" className="btn">Explore Stores</a>
-          <a href="#events" className="btn">View Events</a>
-        </div>
-
-        <div className="play-button">
-          <span id="playPauseBtn" style={{ fontSize: "2rem", color: "white" }}>
-            ▶
-          </span>
+        <div className={styles.heroButtons}>
+          <button className={styles.btnPrimary}>Explore Mall</button>
+          <button className={styles.btnSecondary}>View Stores</button>
         </div>
       </div>
     </section>

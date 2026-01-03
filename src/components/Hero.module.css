@@ -1,0 +1,60 @@
+.hero {
+  min-height: calc(100vh - var(--header-height));
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.heroImage {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.heroContent {
+  max-width: 650px;
+  padding: 0 2rem;
+  color: var(--text-main);
+  text-align: center;
+}
+
+.heroContent h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--muted-text);
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btnPrimary {
+  background-color: #d7263d;
+  color: #fff;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+}
+
+.btnSecondary {
+  background: transparent;
+  color: #111;
+  border: 2px solid #111;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+}

@@ -1,0 +1,45 @@
+.section {
+  padding: 80px 20px;
+}
+
+.aboutContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.visionMission {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.visionBox {
+  max-width: 420px;
+  background: var(--surface-color);
+  padding: 26px;
+  border-radius: 12px;
+  border: 1.5px solid var(--accent-color);
+}
+
+.directors {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.directorCard {
+  width: 280px;
+  background: var(--surface-color);
+  padding: 22px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1.5px solid var(--accent-color);
+  transition: transform 0.3s ease;
+}
+
+.directorCard:hover {
+  transform: translateY(-8px);
+}
