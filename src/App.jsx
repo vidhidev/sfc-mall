@@ -1,6 +1,18 @@
-// Inside App.jsx return statement
+import React from "react";
+// Ensure this path exactly matches your folder structure
+import usePopUpScroll from "./hooks/usePopUpScroll"; 
+
+import TopBar from "./components/TopBar";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Stores from "./components/Stores";
+import Services from "./components/Services";
+import About from "./components/About";
+import Contact from "./components/Contact";
+
 export default function App() {
-  usePopUpScroll();
+  // This line was causing the crash because the hook wasn't correctly linked
+  usePopUpScroll(); 
 
   return (
     <>
@@ -11,14 +23,6 @@ export default function App() {
       <Services />
       <About />
       <Contact />
-
-      {/* New Sticky Info Component */}
-      <div className="sticky-info">
-        <i className="fas fa-clock"></i>
-        <span>Open Today: 10AM - 10PM</span>
-        <span style={{opacity: 0.3}}>|</span>
-        <a href="#contact"><i className="fas fa-map-marker-alt"></i> Location</a>
-      </div>
     </>
   );
 }

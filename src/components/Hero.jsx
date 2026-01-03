@@ -1,26 +1,9 @@
-import { useRef, useState } from "react";
 import heroVideo from "../assets/Untitled video - Made with Clipchamp.mp4";
 
 export default function Hero() {
-  const videoRef = useRef(null);
-  const [playing, setPlaying] = useState(false);
-
-  const togglePlayPause = () => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    if (video.paused) {
-      video.play();
-      setPlaying(true);
-    } else {
-      video.pause();
-      setPlaying(false);
-    }
-  };
-
   return (
     <section className="hero pop-up-scroll">
-      <video ref={videoRef} muted loop>
+      <video id="bgVideo" muted loop>
         <source src={heroVideo} type="video/mp4" />
       </video>
 
@@ -34,8 +17,10 @@ export default function Hero() {
           <a href="#events" className="btn">View Events</a>
         </div>
 
-        <div className="play-button" onClick={togglePlayPause}>
-          <span>{playing ? "❚❚" : "▶"}</span>
+        <div className="play-button">
+          <span id="playPauseBtn" style={{ fontSize: "2rem", color: "white" }}>
+            ▶
+          </span>
         </div>
       </div>
     </section>
