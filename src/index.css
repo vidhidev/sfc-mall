@@ -1,49 +1,85 @@
 /* =========================================================
-   ROOT VARIABLES
+   UPDATED ROOT VARIABLES (High Contrast & Premium)
 ========================================================= */
 :root {
-  /* Luxury Palette */
-  --primary-gold: #D4AF37; /* For high-end call-to-actions */
-  --deep-charcoal: #121212; /* Richer than basic black */
-  --soft-ivory: #FDFDFD; /* Cleaner than basic white */
-  --muted-gray: #757575;
+  --background-color: #FCFAFA; /* Ivory background */
+  --surface-color: #ffffff;
+  --default-color: #121212; /* Dark charcoal for high contrast */
+  --heading-color: #0A0A0A;
+  --accent-color: #C8102E;
+  --muted-text: #555555;
   
-  /* Modern Typography */
-  --heading-font: 'Playfair Display', serif; /* Classic Luxury */
-  --body-font: 'Montserrat', sans-serif; /* Modern, Clean Retail font */
-  
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.3);
+  --default-font: "Montserrat", system-ui, sans-serif; /* Clean Retail Font */
+  --heading-font: "Playfair Display", serif;
+  --nav-font: "Poppins", sans-serif;
+
+  --header-height: 110px;
 }
+
 /* =========================================================
-   RESET & BASE
+   BASE STYLES (Line Height & Readability)
 ========================================================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   font-family: var(--default-font);
   background: var(--background-color);
   color: var(--default-color);
   padding-top: var(--header-height);
+  line-height: 1.8; /* Effortless readability */
+  -webkit-font-smoothing: antialiased;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+/* =========================================================
+   PREMIUM SPACING (120px Padding)
+========================================================= */
+.section {
+  padding: 120px 20px; /* Increased for "breathing room" */
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.section h2 {
+  text-align: center;
+  font-family: var(--heading-font);
+  font-size: 3rem; /* Larger, more "Mega" headings */
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+}
+
+/* =========================================================
+   MICRO-INTERACTIONS (Buttons & Sticky)
+========================================================= */
+
+/* Button Ripple/Scale Effect */
+.btn {
+  padding: 14px 32px;
+  border-radius: 4px; /* Sharper edges feel more luxury */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:active {
+  transform: scale(0.95); /* Micro-interaction on click */
+}
+
+/* Sticky Location/Hours Badge */
+.sticky-info {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--default-color);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50px;
+  z-index: 2000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  font-family: var(--nav-font);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
 
 /* =========================================================
@@ -340,57 +376,97 @@ nav a:hover::after {
 
 /* =========================================================
    SERVICES
+
 ========================================================= */
-/* Container for consistent alignment */
-.container {
+
+
+/* Section Container - Using the 120px padding for "breathing room" */
+#services {
+  padding: 120px 20px;
+  background-color: var(--background-color); /* Ivory base */
+  color: var(--default-color); /* Charcoal text */
+}
+
+/* Intro Text Styling - High Contrast & Line Height */
+#services .container > p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  font-size: 1.1rem;
+  line-height: 1.8; /* Effortless readability */
+  color: var(--muted-text);
+}
+
+/* The Grid - Clean and Spaced */
+.services-grid {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Service Grid Layout */
-.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-/* Professional Card Styling */
+/* Service Card - Luxury Aesthetic */
 .service-card {
   background: var(--surface-color);
-  padding: 30px;
-  border-radius: 12px;
+  padding: 40px 30px;
+  border-radius: 4px; /* Sharp, professional edges */
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); /* Professional transition */
+  position: relative;
+  overflow: hidden;
 }
 
+/* Micro-Interaction: Hover Effect */
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent-color);
 }
 
+/* Icon Styling - Brand Identity */
 .service-card i {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--accent-color);
-  margin-bottom: 20px;
-  display: block;
+  margin-bottom: 25px;
+  display: inline-block;
+  transition: transform 0.5s ease;
 }
 
+.service-card:hover i {
+  transform: scale(1.1) rotate(5deg); /* Subtle icon animation */
+}
+
+/* Typography inside Cards */
 .service-card h3 {
   font-family: var(--nav-font);
   font-size: 1.25rem;
-  margin-bottom: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
   color: var(--heading-color);
+  letter-spacing: 0.5px;
 }
 
 .service-card p {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #666;
+  color: var(--muted-text);
+  margin: 0;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #services {
+    padding: 80px 20px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr; /* Single column for mobile clarity */
+    gap: 20px;
+  }
+}
 /* =========================================================
    ABOUT / DIRECTORS
 ========================================================= */

@@ -1,13 +1,4 @@
-import usePopUpScroll from "./hooks/usePopUpScroll";
-
-import TopBar from "./components/TopBar";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Stores from "./components/Stores";
-import Services from "./components/Services";
-import About from "./components/About";
-import Contact from "./components/Contact";
-
+// Inside App.jsx return statement
 export default function App() {
   usePopUpScroll();
 
@@ -20,6 +11,14 @@ export default function App() {
       <Services />
       <About />
       <Contact />
+
+      {/* New Sticky Info Component */}
+      <div className="sticky-info">
+        <i className="fas fa-clock"></i>
+        <span>Open Today: 10AM - 10PM</span>
+        <span style={{opacity: 0.3}}>|</span>
+        <a href="#contact"><i className="fas fa-map-marker-alt"></i> Location</a>
+      </div>
     </>
   );
 }
