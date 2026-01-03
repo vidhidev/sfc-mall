@@ -6,43 +6,55 @@ import styles from "./About.module.css";
 export default function About() {
   return (
     <section id="aboutus" className={`${styles.section} pop-up-scroll`}>
-      <h2>About SFC Lifestyle</h2>
+      <h2>About Us</h2>
 
-      <p>
-        SFC Megaa Mall has introduced mall culture in its true sense to Sangli.
-        With a unique ambience and modern facilities, it is the pride of the city.
-      </p>
+      <article className={styles.aboutBlock}>
+        <h3>SFC Megaa Mall</h3>
+        <p>
+          Established in 2009, SFC Megaa Mall is the first and leading mall in Sangli,
+          bringing a metro-style shopping and entertainment experience to South and
+          West Maharashtra. Strategically located in the heart of Sangli, the mall spans
+          1.5 lakh sq. ft. and houses top brands, a multiplex, fitness center, food court,
+          and green infrastructure.
+        </p>
+      </article>
 
-      <div className={styles.visionMission}>
-        <div className={`${styles.visionBox} pop-up-scroll`}>
-          <h4>Vision</h4>
-          <p>
-            To be the most respected leader in the construction industry by
-            delivering high-quality projects.
-          </p>
-        </div>
+      <article className={styles.aboutBlock}>
+        <h3>SFC Lifestyles Pvt. Ltd.</h3>
+        <p>
+          Managed by SFC Lifestyles Pvt. Ltd., a specialized entity focused on mall operations,
+          tenant curation, facility management, and innovation. Led by Mr. S.F. Chougule and
+          Mr. Walchand Chougule, the company ensures a modern, customer-centric, and
+          technologically advanced shopping environment.
+        </p>
+      </article>
 
-        <div className={`${styles.visionBox} pop-up-scroll`}>
-          <h4>Mission</h4>
-          <p>
-            To build long-term relationships through integrity and performance.
-          </p>
-        </div>
-      </div>
+      <article className={styles.aboutBlock}>
+        <h3>SFC Group</h3>
+        <p>
+          SFC Lifestyles is part of the SFC Group, founded in 1987, with 50+ completed real estate
+          and infrastructure projects across Maharashtra.
+        </p>
+        <h4>Subsidiaries include:</h4>
+        <ul>
+          <li>SFC Infracon</li>
+          <li>M/s. S.F. Chougule (Class 1 Unlimited Government Contractor)</li>
+        </ul>
+      </article>
 
       <div className={styles.directors}>
         <div className={`${styles.directorCard} pop-up-scroll`}>
-          <img src={director1} />
-          <h4>Mr. Sukumar F. Chougule</h4>
+          <img src={director1} alt="Mr. S.F. Chougule" />
+          <h4>Mr. S.F. Chougule</h4>
           <p><strong>Chairman</strong></p>
         </div>
 
         <div className={`${styles.directorCard} pop-up-scroll`}>
-          <img src={director2} />
-          <h4>Mr. Walchand S. Chougule</h4>
+          <img src={director2} alt="Mr. Walchand Chougule" />
+          <h4>Mr. Walchand Chougule</h4>
           <p><strong>Director</strong></p>
         </div>
       </div>
     </section>
   );
-}
+} 

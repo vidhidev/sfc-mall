@@ -1,59 +1,36 @@
 import React from "react";
-import relianceDigital from "../assets/reliance-digital.jpg";
-import relianceTrends from "../assets/reliance-trends.jpg";
-import tanishq from "../assets/tanishq.jpg";
-import puma from "../assets/puma.jpg";
-import footprint from "../assets/reliance-footprint.jpg";
-import bata from "../assets/bata.jpg";
-import pantaloons from "../assets/pantaloons.jpg";
-import crocodile from "../assets/crocodile.jpg";
-import unlimited from "../assets/unlimited.jpg";
-import biba from "../assets/biba.jpg";
-import ethnicity from "../assets/ethinicity.jpg";
-import ipalace from "../assets/i-palace.jpg";
-
-const storeData = [
-  { id: 1, name: "RELIANCE DIGITAL", img: relianceDigital, cat: "Electronics", loc: "Lower Ground", size: "large", desc: "One stop shop for digital products, appliances, and high-end electronics." },
-  { id: 2, name: "RELIANCE TRENDS", img: relianceTrends, cat: "Apparels", loc: "Lower Ground", size: "wide", desc: "Unparalleled assortment of international and national brands." },
-  { id: 3, name: "TANISHQ", img: tanishq, cat: "Jewellery", loc: "Upper Ground", size: "standard" },
-  { id: 4, name: "i PALACE", img: ipalace, cat: "Apple Reseller", loc: "Upper Ground", size: "standard" },
-  { id: 5, name: "PANTALOONS", img: pantaloons, cat: "Fashion", loc: "First Floor", size: "wide" },
-  { id: 6, name: "PUMA", img: puma, cat: "Sports", loc: "Upper Ground", size: "standard" },
-  { id: 7, name: "BATA", img: bata, cat: "Footwear", loc: "Upper Ground", size: "standard" },
-  { id: 8, name: "CROCODILE", img: crocodile, cat: "Men’s Apparel", loc: "First Floor", size: "standard" },
-  { id: 9, name: "BIBA", img: biba, cat: "Ethnic Wear", loc: "First Floor", size: "standard" },
-  { id: 10, name: "ETHNICITY", img: ethnicity, cat: "Ethnic Fashion", loc: "First Floor", size: "standard" },
-  { id: 11, name: "UNLIMITED", img: unlimited, cat: "Family Fashion", loc: "First Floor", size: "standard" },
-  { id: 12, name: "RELIANCE FOOTPRINT", img: footprint, cat: "Footwear", loc: "Upper Ground", size: "standard" },
-];
-
 import styles from "./Stores.module.css";
+
+const storesByCategory = {
+  "Fashion & Lifestyle": ["Pantaloons", "Biba", "Go Colors", "Crocodile", "Unlimited"],
+  Electronics: ["Reliance Digital", "Apple iStore"],
+  Jewellery: ["Tanishq"],
+  Footwear: ["Bata", "Liberty", "Puma"],
+  "Grooming & Wellness": ["Jawed Habib Hair & Beauty Salon"],
+};
 
 export default function Stores() {
   return (
-    <section id="stores" className={`${styles.section} ${'pop-up-scroll'}`}>
+    <section id="stores" className={`${styles.section} pop-up-scroll`}>
       <div className={styles.container}>
-        <h2 className="pop-up-scroll">Our Premium Brands</h2>
-        <div className={styles.bentoGrid}>
-          {storeData.map((store) => (
-            <div key={store.id} className={`${styles.storeBentoCard} ${styles[store.size]} pop-up-scroll`}>
-              <div className={styles.storeImageWrapper}>
-                <img src={store.img} alt={store.name} className={styles.storeImg} />
-              </div>
-              <div className={styles.storeOverlay}>
-                <div className="store-info-top">
-                  <span className={styles.categoryTag}>{store.cat}</span>
-                  <h3>{store.name}</h3>
-                </div>
-                <div className="store-details">
-                  <p><i className="fas fa-map-marker-alt"></i> {store.loc}</p>
-                  {store.desc && <p className={styles.storeDesc}>{store.desc}</p>}
-                </div>
-              </div>
+        <h2>Stores</h2>
+        <p className="muted" style={{ textAlign: 'center', maxWidth: 800, margin: '0 auto 24px' }}>
+          Explore our curated mix of fashion, electronics, jewellery, footwear and wellness brands.
+        </p>
+
+        <div className={styles.categoriesGrid}>
+          {Object.entries(storesByCategory).map(([category, brands]) => (
+            <div key={category} className={styles.categoryCard}>
+              <h3>{category}</h3>
+              <ul>
+                {brands.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
       </div>
     </section>
   );
-}
+} 

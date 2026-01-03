@@ -12,12 +12,13 @@ export default function Header() {
         </div>
         <nav className={styles.navLinks}>
           <a href="#stores">Stores</a>
-          <a href="#services">Services</a>
-          <a href="#aboutus">About</a>
+          <a href="#cinema">Cinema</a>
+          <a href="#foodcourt">Food Court</a>
+          <a href="#events">Events</a>
+          <a href="#offers">Offers</a>
           <a href="#contact">Contact</a>
-          <button className={`btn-primary ${styles.headerButton}`}>Leasing</button>
         </nav>
       </header>
     </div>
   );
-}
+} 
